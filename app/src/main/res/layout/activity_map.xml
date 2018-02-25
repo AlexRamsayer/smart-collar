@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.alexramsayer.smartcollar.MapsActivity" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/confirm_bounds"
+            android:visibility="gone"
+            android:layout_marginHorizontal="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_icon="@drawable/ic_check"
+            android:onClick="finishBoundary"
+            fab:fab_colorNormal="@color/green"
+            fab:fab_title="@string/add_boundary"
+            fab:fab_colorPressed="@color/green_pressed"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            fab:fab_addButtonColorNormal="@color/abtnBlue"
+            fab:fab_addButtonColorPressed="@color/abtnBlueDark"
+            fab:fab_addButtonPlusIconColor="@color/white_pressed"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_boundary"
+                android:layout_width="wrap_content"
+                fab:fab_icon="@drawable/ic_create"
+                android:layout_height="wrap_content"
+                android:onClick="addBoundary"
+                fab:fab_colorNormal="@color/btnBlue"
+                fab:fab_title="@string/add_boundary"
+                fab:fab_colorPressed="@color/btnBlueDark"/>
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_leash"
+                android:onClick="leashMode"
+                fab:fab_icon="@drawable/ic_gesture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="@color/btnBlue"
+                fab:fab_title="@string/radius_mode"
+                fab:fab_colorPressed="@color/btnBlueDark"/>
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </RelativeLayout>
+
+
+</FrameLayout>
